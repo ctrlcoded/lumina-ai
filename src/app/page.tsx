@@ -61,29 +61,30 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center w-full min-h-[calc(100vh-25rem)] pb-20">
+    <div className="flex flex-col items-center justify-center w-full min-h-[calc(100vh-25rem)] pb-10 sm:pb-20">
       
       {/* Hero Section */}
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="text-center mb-16 relative"
+        className="text-center mb-8 sm:mb-16 relative px-4"
       >
-        <div className="absolute -top-12 -left-32 bg-white/60 dark:bg-white/5 backdrop-blur-md border border-white/40 dark:border-white/10 px-4 py-2 rounded-full shadow-sm flex items-center gap-2 text-primary-500 font-medium text-sm">
+        {/* Floating pills — hidden on mobile to prevent overflow */}
+        <div className="hidden lg:flex absolute -top-12 -left-32 bg-white/60 dark:bg-white/5 backdrop-blur-md border border-white/40 dark:border-white/10 px-4 py-2 rounded-full shadow-sm items-center gap-2 text-primary-500 font-medium text-sm">
           <Sparkles className="w-4 h-4" />
           Human Score 100%
         </div>
         
-        <div className="absolute top-4 -right-32 bg-white/60 dark:bg-white/5 backdrop-blur-md border border-white/40 dark:border-white/10 px-4 py-2 rounded-full shadow-sm flex items-center gap-2 text-primary-500 font-medium text-sm">
+        <div className="hidden lg:flex absolute top-4 -right-32 bg-white/60 dark:bg-white/5 backdrop-blur-md border border-white/40 dark:border-white/10 px-4 py-2 rounded-full shadow-sm items-center gap-2 text-primary-500 font-medium text-sm">
           <Droplet className="w-4 h-4" />
           Natural Flow: Excellent
         </div>
 
-        <h1 className="text-6xl md:text-7xl font-bold font-heading tracking-tight leading-tight mb-6">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-heading tracking-tight leading-tight mb-4 sm:mb-6">
           Make AI Writing <br />
           <span className="text-primary-500">Sound Human</span>
         </h1>
-        <p className="text-neutral-600 dark:text-neutral-400 max-w-lg mx-auto text-lg">
+        <p className="text-neutral-600 dark:text-neutral-400 max-w-lg mx-auto text-base sm:text-lg">
           Transform AI-generated text into natural, authentic human writing using your own LLM API.
         </p>
       </motion.div>
@@ -95,10 +96,10 @@ export default function Home() {
         transition={{ delay: 0.1 }}
         className="w-full relative"
       >
-        <GlassCard className="w-full p-6 flex flex-col md:flex-row gap-6 relative z-10">
+        <GlassCard className="w-full p-4 sm:p-6 flex flex-col md:flex-row gap-4 sm:gap-6 relative z-10">
           
           {/* Left Panel */}
-          <div className="flex-1 flex flex-col gap-4">
+          <div className="flex-1 flex flex-col gap-3 sm:gap-4">
             <div className="flex items-center gap-2 px-2 text-neutral-600 dark:text-neutral-300 font-semibold text-sm">
               <Bot className="w-4 h-4" />
               AI Generated Text
@@ -108,42 +109,42 @@ export default function Home() {
                 value={inputText}
                 onChange={(e) => setInputText(e.target.value)}
                 placeholder="Paste AI-generated text here..."
-                className="w-full h-full min-h-[300px] resize-none glass-input p-6 leading-relaxed"
+                className="w-full h-full min-h-[200px] sm:min-h-[300px] resize-none glass-input p-4 sm:p-6 leading-relaxed text-sm sm:text-base"
               />
-              <div className="absolute bottom-4 right-4 text-xs font-medium text-neutral-500 dark:text-neutral-400 bg-white/50 dark:bg-white/5 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/40 dark:border-white/10">
+              <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 text-xs font-medium text-neutral-500 dark:text-neutral-400 bg-white/50 dark:bg-white/5 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/40 dark:border-white/10">
                 Words: {wordCount}
               </div>
             </div>
           </div>
 
           {/* Center Action */}
-          <div className="flex items-center justify-center shrink-0 md:py-0 py-4">
+          <div className="flex items-center justify-center shrink-0 py-2 md:py-0">
             <div className="flex flex-col items-center gap-2 relative group cursor-pointer" onClick={handleHumanize}>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-20 h-20 rounded-full bg-primary-500 text-white flex items-center justify-center shadow-lg shadow-primary-500/30 transition-shadow group-hover:shadow-xl group-hover:shadow-primary-500/40 relative z-10"
+                className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-primary-500 text-white flex items-center justify-center shadow-lg shadow-primary-500/30 transition-shadow group-hover:shadow-xl group-hover:shadow-primary-500/40 relative z-10"
               >
                 {isProcessing ? (
                   <motion.div 
                     animate={{ rotate: 360 }} 
                     transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
                   >
-                    <Sparkles className="w-8 h-8" />
+                    <Sparkles className="w-6 h-6 sm:w-8 sm:h-8" />
                   </motion.div>
                 ) : (
-                  <Sparkles className="w-8 h-8" />
+                  <Sparkles className="w-6 h-6 sm:w-8 sm:h-8" />
                 )}
               </motion.button>
               <span className="text-primary-500 font-semibold text-sm">Humanize</span>
               
               {/* Outer rings animation */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[calc(50%+14px)] w-24 h-24 bg-primary-500/10 rounded-full z-0 group-hover:animate-ping" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[calc(50%+14px)] w-20 h-20 sm:w-24 sm:h-24 bg-primary-500/10 rounded-full z-0 group-hover:animate-ping" />
             </div>
           </div>
 
           {/* Right Panel */}
-          <div className="flex-1 flex flex-col gap-4">
+          <div className="flex-1 flex flex-col gap-3 sm:gap-4">
             <div className="flex items-center justify-between px-2 text-neutral-600 dark:text-neutral-300 font-semibold text-sm">
               <div className="flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-primary-500" />
@@ -166,7 +167,7 @@ export default function Home() {
                 value={outputText}
                 readOnly
                 placeholder="Your humanized text will appear here..."
-                className="w-full h-full min-h-[300px] resize-none glass-input p-6 leading-relaxed bg-white/30 dark:bg-black/20"
+                className="w-full h-full min-h-[200px] sm:min-h-[300px] resize-none glass-input p-4 sm:p-6 leading-relaxed bg-white/30 dark:bg-black/20 text-sm sm:text-base"
               />
             </div>
           </div>

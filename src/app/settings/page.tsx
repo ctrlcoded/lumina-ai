@@ -47,13 +47,13 @@ export default function SettingsPage() {
       className="flex flex-col items-center justify-center max-w-2xl mx-auto w-full mb-20"
     >
       <div className="text-center mb-10">
-        <h1 className="text-4xl font-bold font-heading mb-4">Configuration</h1>
+        <h1 className="text-3xl sm:text-4xl font-bold font-heading mb-4">Configuration</h1>
         <p className="text-neutral-500 dark:text-neutral-400 max-w-md mx-auto">
           Set up your preferred LLM provider and configure humanization parameters.
         </p>
       </div>
 
-      <GlassCard className="w-full p-8 flex flex-col gap-8 relative overflow-hidden">
+      <GlassCard className="w-full p-5 sm:p-8 flex flex-col gap-6 sm:gap-8 relative overflow-hidden">
         {/* Decorative background blur inside card */}
         <div className="absolute -top-20 -right-20 w-64 h-64 bg-primary-500/10 blur-[80px] rounded-full pointer-events-none" />
 
@@ -117,10 +117,10 @@ export default function SettingsPage() {
         </div>
 
         {/* Save Button */}
-        <div className="pt-4 border-t border-white/40 dark:border-white/10 mt-2 relative z-10 flex justify-end">
+        <div className="pt-4 border-t border-white/40 dark:border-white/10 mt-2 relative z-10 flex sm:justify-end">
           <button
             onClick={handleSave}
-            className="flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-white px-8 py-3 rounded-full text-sm font-medium transition-all shadow-md shadow-primary-500/20 hover:shadow-lg hover:-translate-y-0.5"
+            className="flex items-center justify-center gap-2 w-full sm:w-auto bg-primary-500 hover:bg-primary-600 text-white px-8 py-3 rounded-full text-sm font-medium transition-all shadow-md shadow-primary-500/20 hover:shadow-lg hover:-translate-y-0.5"
           >
             <Save className="w-4 h-4" />
             Save Configuration
