@@ -71,7 +71,7 @@ export default function Home() {
       >
         <div className="absolute -top-12 -left-32 bg-white/60 dark:bg-white/5 backdrop-blur-md border border-white/40 dark:border-white/10 px-4 py-2 rounded-full shadow-sm flex items-center gap-2 text-primary-500 font-medium text-sm">
           <Sparkles className="w-4 h-4" />
-          Human Score 97%
+          Human Score 100%
         </div>
         
         <div className="absolute top-4 -right-32 bg-white/60 dark:bg-white/5 backdrop-blur-md border border-white/40 dark:border-white/10 px-4 py-2 rounded-full shadow-sm flex items-center gap-2 text-primary-500 font-medium text-sm">

@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 import { ThemeToggle } from './ThemeToggle';
+import Image from 'next/image';
 
 export function Navbar() {
   const pathname = usePathname();
@@ -15,7 +16,8 @@ export function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       className="w-full absolute top-0 z-50 py-6 px-8 flex items-center justify-between"
     >
-      <Link href="/" className="text-2xl font-bold text-primary-500 font-heading">
+      <Link href="/" className="text-2xl font-bold text-primary-500 font-heading flex items-center gap-2">
+        <Image src="/logo.png" alt="Lumina AI Logo" width={32} height={32} className="rounded-lg shadow-sm shadow-primary-500/20" />
         Lumina AI
       </Link>
       
