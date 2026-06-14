@@ -1,26 +1,117 @@
 @import "tailwindcss";
 
+/* Tell Tailwind v4 to use class-based dark mode (required for next-themes) */
+@custom-variant dark (&:is(.dark *));
+
+/* ─── Dynamic color tokens that switch between light/dark ─── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --app-bg: #FAF9FF;
+  --app-fg: #111111;
+}
+.dark {
+  --app-bg: #13131A;
+  --app-fg: #FFFFFF;
+  color-scheme: dark;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  --color-primary-100: #e5deff;
+  --color-primary-200: #ccbcff;
+  --color-primary-300: #b39aff;
+  --color-primary-400: #9978ff;
+  --color-primary-500: #7C5CFF;
+  --color-primary-600: #634acc;
+  --color-primary-700: #4a3799;
+
+  --color-secondary-100: #eee8ff;
+  --color-secondary-200: #ddd1ff;
+  --color-secondary-300: #ccbaff;
+  --color-secondary-400: #bba3ff;
+  --color-secondary-500: #A88BFF;
+
+  --color-tertiary-500: #F7F5FF;
+
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e5e5e5;
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-400: #a3a3a3;
+  --color-neutral-500: #737373;
+  --color-neutral-600: #525252;
+  --color-neutral-700: #404040;
+  --color-neutral-800: #262626;
+  --color-neutral-900: #111111;
+
+  /* These reference the dynamic CSS vars above so bg-background auto-switches */
+  --color-background: var(--app-bg);
+  --color-foreground: var(--app-fg);
+
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-hanken-grotesk);
+
+  --shadow-glass: 0 8px 32px 0 rgba(124, 92, 255, 0.1);
+  --shadow-glass-hover: 0 12px 40px 0 rgba(124, 92, 255, 0.15);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    background-image: radial-gradient(circle at 50% -20%, rgba(124, 92, 255, 0.08) 0%, rgba(250, 249, 255, 0) 50%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  .dark body {
+    background-image: radial-gradient(circle at 50% -20%, rgba(157, 133, 255, 0.06) 0%, transparent 50%);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .glass-card {
+    @apply bg-white/60 backdrop-blur-xl border border-white/40 shadow-[var(--shadow-glass)] rounded-[32px];
+  }
+  .dark .glass-card {
+    background-color: rgba(30, 30, 36, 0.7);
+    border-color: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 8px 32px 0 rgba(157, 133, 255, 0.06);
+  }
+
+  .glass-card-hover {
+    @apply hover:shadow-[var(--shadow-glass-hover)] transition-shadow duration-300;
+  }
+
+  .glass-input {
+    @apply bg-white/50 backdrop-blur-md border border-white/50 focus:border-primary-500/50 focus:bg-white/80 focus:ring-4 focus:ring-primary-500/10 transition-all duration-300 rounded-[20px] text-neutral-700 placeholder:text-neutral-400 outline-none;
+  }
+  .dark .glass-input {
+    background-color: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.08);
+    color: #e5e5e5;
+  }
+  .dark .glass-input:focus {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(124, 92, 255, 0.5);
+  }
+  .dark .glass-input::placeholder {
+    color: #79757F;
+  }
+
+  .glass-button {
+    @apply bg-white/70 backdrop-blur-md border border-white/60 hover:bg-white transition-all duration-300 shadow-sm hover:shadow-md rounded-full;
+  }
+  .dark .glass-button {
+    background-color: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-neutral-900 to-primary-600;
+  }
+
+  .text-gradient-purple {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-secondary-500;
+  }
 }
