@@ -168,19 +168,6 @@ lumina-ai/
 
 ---
 
-## 🤝 Supported Providers
-
-| Provider | Models | Free Tier |
-|---|---|:---:|
-| **Google Gemini** | gemini-3.5-flash, gemini-1.5-pro, gemini-1.5-flash | ✅ Yes |
-| **OpenAI** | gpt-4o, gpt-4o-mini, gpt-4-turbo | ❌ No |
-| **Anthropic Claude** | claude-3.5-sonnet, claude-3-opus, claude-3-haiku | ❌ No |
-| **DeepSeek** | deepseek-chat, deepseek-coder | ✅ Yes |
-
-> 💡 **Tip:** Google Gemini offers a generous free tier, making Lumina AI completely free to use.
-
----
-
 ## 📜 License
 
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
