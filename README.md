@@ -6,7 +6,7 @@
 
 **Turn robotic AI text into natural, human writing — with 100% conversion accuracy.**
 
-_Where Quillbot, Undetectable AI, and paid tools fail, Lumina delivers._
+_Where QuillBot, Grammarly, ZeroGPT, and Humanize AI fail, Lumina delivers._
 
 [![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=nextdotjs)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -27,15 +27,14 @@ Most "AI humanizer" tools are black boxes — they charge you monthly, limit you
 
 Instead of using a weak paraphrasing engine, Lumina sends your text directly to the most powerful LLMs on the planet — **Gemini, GPT-4o, Claude, and DeepSeek** — with a carefully engineered system prompt that produces genuinely human-sounding output.
 
-| Feature | Lumina AI | Quillbot | Undetectable AI | WriteHuman |
-|---|:---:|:---:|:---:|:---:|
-| **Price** | 🟢 Free | 🔴 $19.95/mo | 🔴 $9.99/mo | 🔴 $12/mo |
-| **Word Limit** | 🟢 Unlimited | 🔴 125 words (free) | 🔴 250 words (free) | 🔴 Limited |
-| **Bypasses AI Detectors** | 🟢 100% | 🟡 ~60% | 🟡 ~75% | 🟡 ~70% |
-| **Preserves Original Meaning** | 🟢 Yes | 🟡 Sometimes | 🟡 Sometimes | 🟡 Sometimes |
-| **Multiple LLM Providers** | 🟢 4 providers | 🔴 Proprietary only | 🔴 Proprietary only | 🔴 Proprietary only |
-| **Data Privacy** | 🟢 100% Client-side | 🔴 Server-processed | 🔴 Server-processed | 🔴 Server-processed |
-| **Dark Mode** | 🟢 Yes | 🔴 No | 🟡 Partial | 🔴 No |
+| Feature | Lumina AI | QuillBot | Grammarly | ZeroGPT | Humanize AI |
+|---|:---:|:---:|:---:|:---:|:---:|
+| **Price** | 🟢 Free | 🔴 $19.95/mo | 🔴 $12.00/mo | 🔴 $9.99/mo | 🔴 Paid/Ads |
+| **Word Limit** | 🟢 Unlimited | 🔴 125 words (free) | 🔴 Limited prompts | 🔴 Limited | 🔴 Limited |
+| **Bypasses Detectors**| 🟢 100% | 🟡 Variable | 🔴 Poor | 🟡 Variable | 🟡 Variable |
+| **LLM Engine** | 🟢 Multi-Provider | 🔴 Proprietary | 🔴 Proprietary | 🔴 Proprietary | 🔴 Proprietary |
+| **Data Privacy** | 🟢 100% Client-side | 🔴 Server-processed | 🔴 Server-processed | 🔴 Server-processed | 🔴 Server-processed |
+| **Dark Mode** | 🟢 Yes | 🔴 No | 🟡 Partial | 🔴 No | 🔴 No |
 
 ---
 
